@@ -51,11 +51,9 @@ table {
 	border-spacing: 0;
 }
 
-/**********************************************************************************************************************/
+/******************************************************************************/
 
-
-
-body { font-family: 'Open Sans', 'Roboto', sans-serif; /* 'Open Sans', 'Roboto', Helvetica, Arial, sans-serif; /* 'Roboto', 'Helvetica Neue',  */
+body { font-family: 'Open Sans', 'Roboto', sans-serif;
         padding-left:4%; 
         padding-right:4%; 
         padding-top:1em;
@@ -64,13 +62,19 @@ body { font-family: 'Open Sans', 'Roboto', sans-serif; /* 'Open Sans', 'Roboto',
         margin: 0 auto 0 auto;
         line-height: 1.2em;
 
-        background-color: #FFF;
+        background-color: #EEE;
 
-        border-right: 1px #F0F0F0 solid;
-        border-left: 1px #F0F0F0 solid;
+        /*
+        border-right: 2px #888 solid;
+        border-left: 2px #FFF solid;
+        */
 } 
 
-html {background-color:#F7F7F7;}
+html {background-color:#223;}
+
+a, a:link, a:visited {
+    color: #04B;
+}
 
 h1, h2 {color:#000; line-height: 1.2em;}
 

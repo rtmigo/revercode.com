@@ -4,8 +4,7 @@
   a.googlePlay img {
     height: 5rem; padding:0.12em;  
     transition: padding 0.1s;
-
-    }
+  }
   a.googlePlay:hover img {padding:0em; opacity: 0.9;}
 </style>
 
@@ -86,27 +85,26 @@
     {{- $rawContentSections := split .RawContent $sectionDelimiter -}}
     
     <style>
-      
-      .actionButton {
+
+      .actionButton, .actionButton:link {
         background-color:#FF2800;
-        color: #FFF;
+        color: #F7F7F7;
         font-weight:400;
         letter-spacing: 0.025em;
         padding: 0.5em 1.25em 0.5em 1.25em;
       }
 
       .actionButton:hover {
-        color:#FFF;
-        background-color:#FF5000;
+        color: #FFFFFF;
+
+        background-color:#0080FF;
       }
 
       #content ul {
-        
         padding-left:2.25rem;
       }
     </style>
-    
-                
+
     <style>
       .mockupScreen {width:88%; position: absolute; left: 5.3%; top:8.8%;}
       .mockupOuter {position: relative; display: block; width: 100%;}
@@ -130,8 +128,8 @@
             <div class="mockupOuter">
               <a href="{{.Params.googlePlayUrl}}">
                 <img src="/images/{{.Params.screenshot}}" class="mockupScreen"/>
-                <img src="/images/pixelmockup169.png" class="mockupFront" alt="Screenshot of &quot;{{.Params.appTitle}}&quot; app"/>
-                <img src="/images/pixelmockup169.png" class="mockupFrontInvisibleHeight"/>
+                <img src="/images/pixelmockup169_on_black.png" class="mockupFront" alt="Screenshot of &quot;{{.Params.appTitle}}&quot; app"/>
+                <img src="/images/pixelmockup169_on_black.png" class="mockupFrontInvisibleHeight"/>
             </a>
             </div>
           </div>
