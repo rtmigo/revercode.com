@@ -1,0 +1,14 @@
+baseURL = "https://revercode.com/"
+languageCode = "en-us"
+title = "Revercode"
+
+theme = "mytheme"
+relativeURLs = false
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+  [languages.ru]
+    languageName = "Русский"
+    weight = 2

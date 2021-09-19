@@ -1,0 +1,54 @@
+<div class="container-fluid bg-dark ">
+    <nav class="navbar navbar-dark navbar-expand">
+
+      
+
+      <a class="navbar-brand" href="{{"/" | relLangURL}}">
+        {{if .Params.appTitle}}
+          <!--<span class="d-inline-block d-sm-none rounded" style="background-color: #668; padding:0 0.3em 0 0.3em;">W</span>-->
+          <span class="d-inline-block d-sm-none">R</span>
+          <span class="d-sm-inline-block d-none">Revercode</span>
+        {{else}}  
+          Revercode
+        {{end}}  
+      </a>
+
+      
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">{{upper .Params.appTitle}}</a>
+          </li>
+        </ul>  
+
+        
+
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="material-icons-extended" aria-hidden="true" lang="" style="vertical-align:middle; font-size: 1.25em;">translate</i>
+
+              <!-- на маленьнких экранах вместо названия языка останется иконка -->
+              <span class="d-sm-inline-block d-none">
+                {{.Language.LanguageName}}
+              </span>
+              
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              {{ range $.Page.AllTranslations }}
+              <li><a class="dropdown-item" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+              {{ end }}
+            </ul>
+          </li>  
+
+        </ul>
+      </div>
+
+
+
+         
+    </nav>    
+  </div>
+

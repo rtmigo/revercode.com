@@ -1,0 +1,1 @@
+Static site source for website https://werhal.com

@@ -1,0 +1,218 @@
+{{ define "gpButton" }}
+
+<style>
+  a.googlePlay img {
+    height: 5rem; padding:0.12em;  
+    transition: padding 0.1s;
+
+    }
+  a.googlePlay:hover img {padding:0em; opacity: 0.9;}
+</style>
+
+{{$title:=print "\"" .Params.appTitle "\" "  (i18n "onGooglePlay") }}
+
+<a class="googlePlay" href="{{.Params.googlePlayUrl}}"  title="{{$title}}">
+  
+    <img alt="{{$title}}"
+      src="/images/google_play_{{.Language}}.png" 
+      class="mx-auto d-block"/>
+  
+</a>
+
+{{ end }}          
+
+
+{{ define "main" }}    
+    
+
+<!--
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+        </div>
+
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">{{upper .Params.appTitle}}</a>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>        
+    
+        </div>
+
+
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Page 1</a></li>
+          <li><a href="#">Page 2</a></li>
+          <li><a href="#">Page 3</a></li>
+        </ul>
+             
+      </div>
+    </nav>    
+    --> 
+
+    {{- $sectionDelimiter := "<!-- section break -->" -}}
+    {{- $rawContentSections := split .RawContent $sectionDelimiter -}}
+    
+    <style>
+      
+      .actionButton {
+        background-color:#FF2800;
+        color: #FFF;
+        font-weight:400;
+        letter-spacing: 0.025em;
+        padding: 0.5em 1.25em 0.5em 1.25em;
+      }
+
+      .actionButton:hover {
+        color:#FFF;
+        background-color:#FF5000;
+      }
+
+      #content ul {
+        
+        padding-left:2.25rem;
+      }
+    </style>
+    
+                
+    <style>
+      .mockupScreen {width:88%; position: absolute; left: 5.3%; top:8.8%;}
+      .mockupOuter {position: relative; display: block; width: 100%;}
+      .mockupOuter a {outline: 0;}
+      .mockupFront, .mockupFrontInvisibleHeight  {width:100%;}
+      .mockupFront { position: absolute; }
+      .mockupFrontInvisibleHeight {position: relative; visibility: hidden;}
+
+      /* В случае статичного скриншота эти стили можно использовать так:
+        <div class="mockupOuter">
+          <img src="Screenshot_1604959466.png" class="mockupScreen"/>
+          <img src="pixelmockup169.png" class="mockupFront"/>
+          <img src="pixelmockup169.png" class="mockupFrontInvisibleHeight"/>
+        </div> */
+    </style>  
+
+    <div class="container-fluid fullwidth">
+        <div class="row  mt-4">
+          <div class="col-sm-6">
+            
+            <div class="mockupOuter">
+              <a href="{{.Params.googlePlayUrl}}">
+                <img src="/images/{{.Params.screenshot}}" class="mockupScreen"/>
+                <img src="/images/pixelmockup169.png" class="mockupFront" alt="Screenshot of &quot;{{.Params.appTitle}}&quot; app"/>
+                <img src="/images/pixelmockup169.png" class="mockupFrontInvisibleHeight"/>
+            </a>
+            </div>
+          </div>
+
+
+          
+        
+
+          <div class="col-sm-6 pt-4" >
+            {{ index $rawContentSections 0 | .RenderString }}
+
+            {{ block "gpButton" . }}{{ end }}
+          
+          
+          </div>
+<!--
+          {{ $downloadText := print "\"" .Params.appTitle "\""}}
+
+          /static/google_play_{{.Language}}.png
+          <img src="/images/google_play_{{.Language}}.png"/>
+
+          <div class="col-sm-6 pt-4" > <!-- style="font-size: 1.1em;" 
+            {{ index $rawContentSections 0 | .RenderString }}
+
+            <div class="col-sm-12 pt-4" style="text-align: center;">
+                <a  role="button"
+                    href="{{.Params.googlePlayUrl}}" 
+                    style="width:100%"
+                    hint=":)"
+                    class="btn actionButton shadow-sm">
+                    {{ (i18n "download") }}
+                    {{ .Params.appTitle }}<br/>
+                    {{ (i18n "onGooglePlay") }}
+                  </a>
+              </div>
+    
+          </div>
+        </div>
+        -->
+        <!--
+
+        <div class="row mt-5">
+            <div class="col-sm-12" style="text-align: center;">
+            <a  role="button"
+                href="{{.Params.googlePlayUrl}}" 
+                
+                class="btn btn-success">Скачать на Google Play</a>
+          </div>
+        </div>
+        -->
+
+        <div class="row mt-5">
+            {{ index $rawContentSections 1 | .RenderString }}
+        </div>  
+
+        {{- if gt (len $rawContentSections) 1 -}}
+
+        <!--{{ block "gpButton" . }}{{ end }}-->
+
+        
+        
+        <div class="row mt-3">
+            <div class="col-sm-12" style="text-align: center;">
+            <a  role="button"
+            title="{{ print "\"" .Params.appTitle "\" "  (i18n "onGooglePlay") }}"
+                href="{{.Params.googlePlayUrl}}" 
+                class="btn actionButton shadow-sm">
+                {{ (i18n "download") }} 
+                {{ (i18n "onGooglePlay") }}
+
+              </a>
+          </div>
+        </div>
+
+        {{- end -}}
+        
+
+        <div class="row mt-5 pl-1 pr-1">  
+          <div class="col-sm-12 fullwidth " style="text-align: center; font-size:small; color: #666; margin-left:auto; margin-right:auto;">
+            {{.Params.bottom}}
+          </div>          
+        </div>  
+      </div>    
+      {{ end }}
