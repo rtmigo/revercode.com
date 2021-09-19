@@ -87,17 +87,17 @@
     <style>
 
       .actionButton, .actionButton:link {
-        background-color:#FF2800;
-        color: #F7F7F7;
+        /*background-color:#EE4000;*/
+        /*color: #000;*/
         font-weight:400;
         letter-spacing: 0.025em;
         padding: 0.5em 1.25em 0.5em 1.25em;
       }
 
       .actionButton:hover {
-        color: #FFFFFF;
+        /*color: #FFFFFF;*/
 
-        background-color:#0080FF;
+        /*background-color:#0080FF;*/
       }
 
       #content ul {
@@ -196,7 +196,7 @@
             <a  role="button"
             title="{{ print "\"" .Params.appTitle "\" "  (i18n "onGooglePlay") }}"
                 href="{{.Params.googlePlayUrl}}" 
-                class="btn actionButton shadow-sm">
+                class="btn shadow-sm actionButton btn-warning">
                 {{ (i18n "download") }} 
                 {{ (i18n "onGooglePlay") }}
 
