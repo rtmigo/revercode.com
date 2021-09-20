@@ -3,7 +3,7 @@ title: "Rmbr Artworks for Android"
 draft: false
 type: app_brief
 googlePlayUrl: https://play.google.com/store/apps/details?id=com.werhal.rmbrart
-screenshot: rmbr_artworks/en-2.png.q60.jpg
+screenshot: rmbr_artworks/screenshots/ru-4.jpg
 appTitle: Угадай художника
 
 ---
