@@ -1,10 +1,10 @@
 ---
-title: "Kremlin Atomic Clock for Android"
+title: "Kuranty"
 draft: false
 type: app_brief
 googlePlayUrl: https://play.google.com/store/apps/details?id=com.werhal.kremlin
 screenshot: kremlin/Screenshot_1610324457.png.q60.jpg
-appTitle: Kremlin Atomic Clock    
+appTitle: Kuranty    
 
 ---
 
