@@ -1,10 +1,10 @@
 ---
-title: "Куранты: приложение для Android"
+title: "Золотые минуты: приложение для Android"
 draft: false
 type: app_brief
-googlePlayUrl: https://play.google.com/store/apps/details?id=com.werhal.kremlin
+googlePlayUrl: https://play.google.com/store/apps/details?id=com.revercode.klock
 screenshot: kremlin/Screenshot_1610324457.png.q60.jpg
-appTitle: Куранты 
+appTitle: Золотые минуты 
 language: ru   
 
 ---
