@@ -43,7 +43,7 @@
             while (t==element.innerText);
             element.innerText = t;
 
-            timeout=Math.pow(timeout, (Math.random()*2-1)*0.2+1.0)
+            timeout=Math.pow(timeout, (Math.random()*2-1)*0.2+1.0);
             if (timeout<100)   timeout = 100;
             if (timeout>10000) timeout = 10000;
 
