@@ -3,10 +3,12 @@
 
 <head>
     {{ partial "head.html" . }}
-    {{ partial "googleAnalytics.html" . }} 
+    {{ partial "googleAnalytics.html" . }}
+    {{ partial "google_tag_manager_head.html" . -}}
 </head>
 
 <body class="bootstrap-dark">
+    {{ partial "google_tag_manager_body.html" . -}}
     {{- partial "header.html" . -}}
 
     <main>
