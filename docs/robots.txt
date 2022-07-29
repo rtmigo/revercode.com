@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://revercode.com/sitemap.xml

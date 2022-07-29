@@ -1,4 +1,0 @@
-http://localhost:1313/app_privacy_terms/kremlin/
-http://localhost:1313/app_privacy_terms/rmbrart/
-http://localhost:1313/app_privacy_terms/momentix/
-http://localhost:1313/app_privacy_terms/sta/
