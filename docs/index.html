@@ -34,6 +34,12 @@
   ul {margin-left: 1.1rem;}
 
   strong {font-weight: 500;}
+
+  body {
+      background-image: url(/images/bg/005-subtle-light-patterns.jpg); /* Путь к фоновому рисунку */
+    /*background-position: left bottom;  Положение фона */
+    background-repeat: repeat-both;  Повторяем фон по горизонтали */
+    }
 </style>
 
 <!-- ради иконки переключения языков подключаем шрифт -->
@@ -124,15 +130,48 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
     <main>
-        
-<div class="page-hero d-flex align-items-center justify-content-center "  style="padding:0 1em 0 1em;">
-        <div class="mt-5 pl-2 pr-2">
+        <div class="container-fluid fullwidth">
+    <div class="row fullwidth pt-4">
+
+<!--        <div class="mt-5 pl-2 pr-2">
             <p>Revercode is such a small software company that it is often lost by its founder.</p>
             <p>E-mail us: <a href="mailto:contact@revercode.com" style="text-decoration: none">contact@revercode.com</a></p>
             <p>Our <a href="https://play.google.com/store/apps/developer?id=Revercode">apps on Google Play</a></p>
+        </div>-->
 
+        <style>
+            img.icon { height: 128px; border-radius: 5%;}
+            p.app_title { text-align:center;}
 
+            .app_box a:link, .app_box a:visited { text-decoration: none; }
+        </style>
+        <div class="col text-center app_box">
+            <a href="/rmbr_artworks/">
+            <image src="/images/rmbr_artworks/icons/RmbrArtworks-icon-mondrian-v4-512-justbigger.jpg" class="icon">
+            <p class="app_title">Rmbr Artworks</p>
+                </a>
         </div>
+
+        <div class="col text-center app_box">
+            <a href="/ru/smarter_than_average/">
+            <image src="/images/sta/sta-4000-w448-gplay.jpg" class="icon"/>
+            <p class="app_title">Умнее среднего</p>
+            </a>
+        </div>
+        <div class="col text-center app_box">
+            <a href="/momentix/">
+            <div><image src="/images/momentix/atom-icon-403-ps.jpg" class="icon"></image></div>
+            <div class="app_title">Momentix</div>
+                </a>
+        </div>
+        <div class="col text-center app_box">
+            <a href="/klock/">
+            <div><image src="/images/kremlin/star-512d.jpg" class="icon"></image></div>
+            <div class="app_title">Golden Time</div>
+                </a>
+        </div>
+</div>
+
 </div>
     </main>
     <style>
