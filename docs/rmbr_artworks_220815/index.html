@@ -98,11 +98,45 @@ padding-left:2.25rem;
 .mockupFront { position: absolute; }
 .mockupFrontInvisibleHeight {position: relative; visibility: hidden;}
 </style>
+<script>
+// если страница загружена с параметром `gp_referrer`, например,
+// https://revercode.com/rmbr_artworks/?gp_referrer=abc
+// это значит, что во всех ссылках класса "googlePlayLink" на этой странице
+// нужно подменить адрес, добавив к нему параметр `referrer`, например
+// https://play.google.com/...?id=com.werhal.rmbrart@referrer=abc
+// (@ - это амперсанд, который не вставляется в этот комментарий)
+//
+// TODO автоматизированный тест
+function updateGooglePlayLinks() {
+function needToSetReferrer() {
+let u = new URL(window.location);
+return u.searchParams.get('gp_referrer');
+}
+function transformGooglePlayLinks(url2url) {
+for (var elem of document.getElementsByClassName("googlePlayLink")) {
+elem.setAttribute("href", url2url(elem.getAttribute("href")));
+}
+}
+//////////////
+let newGooglePlayReferrer = needToSetReferrer();
+if (newGooglePlayReferrer!=null) {
+window.onload = function () {
+function url2url(oldUrl) {
+let u = new URL(oldUrl);
+u.searchParams.set("referrer", newGooglePlayReferrer);
+return u;
+};
+transformGooglePlayLinks(url2url);
+};
+};
+}
+updateGooglePlayLinks();
+</script>
 <div class="container-fluid fullwidth">
 <div class="row mt-4">
 <div class="col-sm-6">
 <div class="mockupOuter">
-<a href="https://play.google.com/store/apps/details?id=com.werhal.rmbrart&hl=en&referrer=revercode.com">
+<a href="https://play.google.com/store/apps/details?id=com.werhal.rmbrart&hl=en&referrer=revercode.com" class="googlePlayLink">
 <div class="mockupScreenBg"></div>
 <img src="/images/rmbr_artworks/screenshots/en-3.jpg"
 class="mockupScreen"/>
@@ -122,7 +156,7 @@ bit of magic. Each time you play, you'll get the questions arranged the most
 effective way to make your learning faster and stronger.</p>
 <p>So relax and have fun: it's not just another trivia quiz test. This game is your
 personal memory trainer an</p>
-<a class="googlePlay" href="https://play.google.com/store/apps/details?id=com.werhal.rmbrart&hl=en&referrer=revercode.com" title="Rmbr Artworks">
+<a class="googlePlay googlePlayLink" href="https://play.google.com/store/apps/details?id=com.werhal.rmbrart&hl=en&referrer=revercode.com" title="Rmbr Artworks">
 <img alt="Rmbr Artworks"
 src="/images/google_play_en.png"
 class="mx-auto d-block"/>
@@ -157,7 +191,8 @@ harder the questions become.</p>
 <a role="button"
 title="Rmbr Artworks on Google Play"
 href="https://play.google.com/store/apps/details?id=com.werhal.rmbrart&hl=en&referrer=revercode.com"
-class="btn shadow-sm actionButton btn-warning">
+class="googlePlayLink btn shadow-sm actionButton btn-warning"
+>
 Download on Google Play
 </a>
 </div>
