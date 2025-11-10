@@ -11,11 +11,11 @@
 {{$title:=print "\"" .Params.appTitle "\" "  (i18n "onGooglePlay") }}
 
 <a class="googlePlay" href="{{.Params.googlePlayUrl}}"  title="{{$title}}">
-  
+
     <img alt="{{$title}}"
       src="/images/google_play_{{.Language}}.png" 
       class="mx-auto d-block"/>
-  
+
 </a>
 
 {{ end }}          
@@ -195,7 +195,7 @@
             <div class="col-sm-12" style="text-align: center;">
             <a  role="button"
             title="{{ print "\"" .Params.appTitle "\" "  (i18n "onGooglePlay") }}"
-                href="{{.Params.googlePlayUrl}}" 
+                href="{{.Params.googlePlayUrl}}"
                 class="btn shadow-sm actionButton btn-warning">
                 {{ (i18n "download") }} 
                 {{ (i18n "onGooglePlay") }}
